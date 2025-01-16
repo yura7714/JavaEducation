@@ -5,16 +5,27 @@ import java.util.Scanner;
 class SymbolsSequence {
     char firstSymbol, lastSymbol;
 
-    public void print() {
+    private void printChar(char c, StringBuilder stringBuilder) {
+        String output = c + " ";
+
+        System.out.print(output);
+        stringBuilder.append(output);
+    }
+
+    public StringBuilder print() {
+        StringBuilder output = new StringBuilder();
+
         if (firstSymbol > lastSymbol) {
             for (char i = firstSymbol; i >= lastSymbol; i--) {
-                System.out.print(i + " ");
+                printChar(i, output);
             }
         } else {
             for (char i = firstSymbol; i <= lastSymbol; i++) {
-                System.out.print(i + " ");
+                printChar(i, output);
             }
         }
+
+        return output;
     }
 }
 
